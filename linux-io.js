@@ -5,7 +5,7 @@ var BoardIO = require('board-io'),
   Gpio = require('onoff').Gpio,
   util = require('util');
 
-var SAMPLING_INTERVAL = 5;
+var DEFAULT_SAMPLING_INTERVAL = 5;
 
 function LinuxIO(options) {
   var i;
@@ -36,6 +36,8 @@ function LinuxIO(options) {
     }
   }
 
+  this._samplingInterval = typeof(options.samplingInterval) !== 'undefined' ?
+    options.samplingInterval : DEFAULT_SAMPLING_INTERVAL;
   this._reports = [];
   this._reportTimeoutId = 0;
   this._addressToBus = {};
@@ -79,7 +81,7 @@ LinuxIO.prototype.digitalRead = function(pin, handler) {
   this.on(event, handler);
 
   if (!this._reportTimeoutId) {
-    this._reportTimeoutId = setTimeout(this._tick.bind(this), SAMPLING_INTERVAL);
+    this._reportTimeoutId = setTimeout(this._tick.bind(this), this._samplingInterval);
   }
 
   return this;
@@ -104,7 +106,7 @@ LinuxIO.prototype._tick = function() {
     }
   }.bind(this));
 
-  this._reportTimeoutId = setTimeout(this._tick.bind(this), SAMPLING_INTERVAL);
+  this._reportTimeoutId = setTimeout(this._tick.bind(this), this._samplingInterval);
 };
 
 LinuxIO.prototype.i2cConfig = function(options) {
@@ -173,7 +175,7 @@ LinuxIO.prototype.i2cRead = function(address, register, size, handler) {
   var continuousRead = function() {
     this.i2cReadOnce(address, register, size, function(bytes) {
       handler(bytes);
-      setTimeout(continuousRead, SAMPLING_INTERVAL);
+      setTimeout(continuousRead, this._samplingInterval);
     });
   }.bind(this);
 
