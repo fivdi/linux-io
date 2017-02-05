@@ -98,19 +98,6 @@ LinuxIO.prototype.digitalWrite = function(pin, value) {
   return this;
 };
 
-LinuxIO.prototype._tick = function() {
-  this._reports.forEach(function (report) {
-    var value = report.pinData.gpio.readSync();
-
-    if (value !== report.pinData.value) {
-      report.pinData.value = value;
-      this.emit(report.event, value);
-    }
-  }.bind(this));
-
-  this._reportTimeoutId = setTimeout(this._tick.bind(this), this._samplingInterval);
-};
-
 LinuxIO.prototype.i2cConfig = function(options) {
   // note that there's a design flaw here
   // two devices with the same address on different buses doesn't work
@@ -221,6 +208,19 @@ LinuxIO.prototype.i2cReadOnce = function(address, register, size, handler) {
   }
 
   return this;
+};
+
+LinuxIO.prototype._tick = function() {
+  this._reports.forEach(function (report) {
+    var value = report.pinData.gpio.readSync();
+
+    if (value !== report.pinData.value) {
+      report.pinData.value = value;
+      this.emit(report.event, value);
+    }
+  }.bind(this));
+
+  this._reportTimeoutId = setTimeout(this._tick.bind(this), this._samplingInterval);
 };
 
 module.exports = LinuxIO;
