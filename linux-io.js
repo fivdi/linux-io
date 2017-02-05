@@ -65,6 +65,8 @@ LinuxIO.prototype.pinMode = function(pin, mode) {
     }
     pinData.mode = mode;
   }
+
+  return this;
 };
 
 LinuxIO.prototype.digitalRead = function(pin, handler) {
