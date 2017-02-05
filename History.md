@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.0.1 / Feb 05 2017
+===================
 
   * allow sampling interval to be configured
   * pinMode returns this rather than undefined
