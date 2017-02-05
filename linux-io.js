@@ -92,7 +92,7 @@ LinuxIO.prototype.digitalRead = function(pin, handler) {
 LinuxIO.prototype.digitalWrite = function(pin, value) {
   var pinData = this._pins[pin];
 
-  pinData.gpio.writeSync(value);
+  this._digitalWriteSync(pinData, value);
   pinData.value = value;
 
   return this;
@@ -212,7 +212,7 @@ LinuxIO.prototype.i2cReadOnce = function(address, register, size, handler) {
 
 LinuxIO.prototype._tick = function() {
   this._reports.forEach(function (report) {
-    var value = report.pinData.gpio.readSync();
+    var value = this._digitalReadSync(report.pinData);
 
     if (value !== report.pinData.value) {
       report.pinData.value = value;
@@ -221,6 +221,14 @@ LinuxIO.prototype._tick = function() {
   }.bind(this));
 
   this._reportTimeoutId = setTimeout(this._tick.bind(this), this._samplingInterval);
+};
+
+LinuxIO.prototype._digitalReadSync = function(pinData) {
+  return pinData.gpio.readSync();
+};
+
+LinuxIO.prototype._digitalWriteSync = function(pinData, value) {
+  pinData.gpio.writeSync(value);
 };
 
 module.exports = LinuxIO;
