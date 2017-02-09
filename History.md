@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * simplify overriding of pwmWrite, servoConfig and servoWrite
+
 0.0.1 / Feb 05 2017
 ===================
 

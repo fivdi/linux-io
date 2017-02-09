@@ -98,6 +98,45 @@ LinuxIO.prototype.digitalWrite = function(pin, value) {
   return this;
 };
 
+LinuxIO.prototype.pwmWrite = function(pin, value) {
+  this._pwmWriteSync(this._pins[pin], value);
+
+  return this;
+};
+
+LinuxIO.prototype.analogWrite = LinuxIO.prototype.pwmWrite;
+
+LinuxIO.prototype.servoConfig = function(pin, min, max) {
+  var pinData = this._pins(pin);
+
+  /*if (pinData.mode !== this.MODES.SERVO) { // TODO - Is this ever needed?
+    this.pinMode(pin, this.MODES.SERVO);
+  }*/
+
+  pinData.servoConfig.min = min;
+  pinData.servoConfig.max = max;
+
+  return this;
+};
+
+LinuxIO.prototype.servoWrite = function(pin, value) {
+  var pinData = this._pins[pin];
+
+  /*if (pinData.mode !== this.MODES.SERVO) { // TODO - Is this ever needed?
+    this.pinMode(pin, this.MODES.SERVO);
+  }*/
+
+  if (value < 0) {
+    value = 0;
+  } else if (value > 180) {
+    value = 180;
+  }
+
+  this._servoWriteSync(pinData, value);
+
+  return this;
+};
+
 LinuxIO.prototype.i2cConfig = function(options) {
   // note that there's a design flaw here
   // two devices with the same address on different buses doesn't work
@@ -229,6 +268,12 @@ LinuxIO.prototype._digitalReadSync = function(pinData) {
 
 LinuxIO.prototype._digitalWriteSync = function(pinData, value) {
   pinData.gpio.writeSync(value);
+};
+
+LinuxIO.prototype._pwmlWriteSync = function(pinData, value) {
+};
+
+LinuxIO.prototype._servolWriteSync = function(pinData, value) {
 };
 
 module.exports = LinuxIO;
