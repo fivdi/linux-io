@@ -270,10 +270,10 @@ LinuxIO.prototype._digitalWriteSync = function(pinData, value) {
   pinData.gpio.writeSync(value);
 };
 
-LinuxIO.prototype._pwmlWriteSync = function(pinData, value) {
+LinuxIO.prototype._pwmWriteSync = function(pinData, value) {
 };
 
-LinuxIO.prototype._servolWriteSync = function(pinData, value) {
+LinuxIO.prototype._servoWriteSync = function(pinData, value) {
 };
 
 module.exports = LinuxIO;
