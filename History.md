@@ -2,6 +2,7 @@ Unpublished
 ===========
 
   * raspberry pi examples
+  * i2c accelerometer example
 
 0.0.2 / Feb 09 2017
 ===================

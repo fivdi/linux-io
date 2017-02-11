@@ -5,8 +5,8 @@ var LinuxIO = require('../..'),
 
 function TinyChipIO() {
   LinuxIO.call(this, {
-    pins: [132, 133, 1013, 1014],
-    defaultI2cBus: 2
+    pins: [132, 1013, 1014],
+    defaultI2cBus: 1
   });
 
   setImmediate(function () {
