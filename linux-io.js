@@ -54,8 +54,6 @@ LinuxIO.prototype.pinMode = function(pin, mode) {
   var pinData = this._pins[pin],
     direction;
 
-  console.log('pin: ', pin, 'mode: ', mode);
-
   if (mode === this.MODES.INPUT || mode === this.MODES.OUTPUT) {
     direction = mode === this.MODES.INPUT ? 'in' : 'out';
     if (!pinData.gpio) {
