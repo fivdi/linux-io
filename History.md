@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.1.0 / Feb 11 2017
+===================
 
   * raspberry pi examples
   * i2c accelerometer example
