@@ -80,7 +80,7 @@ board.on('ready', function() {
 
 If an ADXL345 accelerometer is connected to I2C bus 1, the following
 [program](https://github.com/fivdi/linux-io/blob/master/example/raspberry-pi/i2c-accelerometer.js)
-will print information from the accelerometer.
+will print information provided by accelerometer.
 
 ```js
 var five = require('johnny-five');
