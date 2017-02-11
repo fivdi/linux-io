@@ -1,6 +1,6 @@
 'use strict';
 
-var LinuxIO = require('..'),
+var LinuxIO = require('../..'),
   util = require('util');
 
 function TinyChipIO() {
