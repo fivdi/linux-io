@@ -129,7 +129,7 @@ board.on('ready', function() {
 
 ## Examples
 
-Additional examples for the Raspberry Pi, BeagleBone-Black and C.H.I.P can be
+Additional examples for the Raspberry Pi, BeagleBone Black and C.H.I.P can be
 found in the
 [example directory](https://github.com/fivdi/linux-io/tree/master/example).
 
