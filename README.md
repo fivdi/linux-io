@@ -1,8 +1,9 @@
 # linux-io 
 
 linux-io is an extensible Linux
-[IO Plugin](https://github.com/rwaldron/io-plugins) for Johnny-Five. It
-extends [board-io](https://github.com/achingbrain/board-io) to provide Linux
+[IO Plugin](https://github.com/rwaldron/io-plugins) for
+[Johnny-Five](https://github.com/rwaldron/johnny-five). It extends
+[board-io](https://github.com/achingbrain/board-io) to provide Linux
 implementations of the digital IO and I2C methods that IO Plugins are
 required to implement.
 
@@ -22,6 +23,22 @@ reusable.
 ```
 npm install linux-io
 ```
+
+## Johnny-Five Features Supported
+
+Feature | Support
+:--- | :---
+Analog Read | no
+Digital Read | yes
+Digital Write | yes
+PWM | no
+Servo | no
+I2C | yes
+One Wire | no
+Stepper | no
+Serial/UART | no
+DAC | no
+Ping | no
 
 ## Usage
 
