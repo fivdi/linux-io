@@ -15,8 +15,8 @@ The initial motivation for implementing linux-io was to provide Linux
 implementations of the I2C methods that Johnny-Five IO Plugins are required to
 implement. Over the course of the last two years I was involved in adding I2C
 functionality to a number of IO Plugins. In reality, more or less the same
-code was added to each IO Plugin. The goal of linux-io is to make this such
-code reusable across Linux IO Plugins.
+code was added to each IO Plugin. The goal of linux-io is to make such code
+reusable across Linux IO Plugins.
 
 ## Installation
 
