@@ -52,7 +52,7 @@ module.exports = TinyRaspberryPiIO;
 
 If a button is connected to GPIO4 and an LED is connected to GPIO17, the
 following
-[program]https://github.com/fivdi/linux-io/blob/master/example/raspberry-pi/led-button.js
+[program](https://github.com/fivdi/linux-io/blob/master/example/raspberry-pi/led-button.js)
 will turn the LED on when the button is pressed and turn
 the LED off when the button is released.
 
