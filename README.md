@@ -127,6 +127,9 @@ board.on('ready', function() {
 });
 ```
 
-Additional examples for the Raspberry Pi and C.H.I.P can be found in the
+## Examples
+
+Additional examples for the Raspberry Pi, BeagleBone-Black and C.H.I.P can be
+found in the
 [example directory](https://github.com/fivdi/linux-io/tree/master/example).
 
