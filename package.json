@@ -12,8 +12,8 @@
   },
   "dependencies": {
     "board-io": "^3.0.5",
-    "i2c-bus": "^1.2.0",
-    "onoff": "^1.1.1"
+    "i2c-bus": "^1.2.1",
+    "onoff": "^1.1.2"
   },
   "keywords": [
     "linux",

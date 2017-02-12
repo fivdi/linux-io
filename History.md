@@ -2,6 +2,7 @@ Unpublished
 ===========
 
   * beaglebone black examples
+  * upgrade to onoff v1.1.2 and i2c-bus 1.2.1
 
 0.1.0 / Feb 11 2017
 ===================
