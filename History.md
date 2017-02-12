@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.1.1 / Feb 12 2017
+===================
 
   * beaglebone black examples
   * upgrade to onoff v1.1.2 and i2c-bus 1.2.1
