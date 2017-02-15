@@ -26,6 +26,10 @@ npm install linux-io
 
 ## Johnny-Five Features Supported
 
+The Johnny-Five features supported by a platform are summarized in tables on
+the [Platform Support](http://johnny-five.io/platform-support/) page. The
+features supported by linux-io shown in the following table:
+
 Feature | Support
 :--- | :---
 Analog Read | no
