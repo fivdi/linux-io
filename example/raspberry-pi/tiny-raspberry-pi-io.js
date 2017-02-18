@@ -5,7 +5,15 @@ var LinuxIO = require('../..'),
 
 function TinyRaspberryPiIO() {
   LinuxIO.call(this, {
-    pins: [4, 17],
+    pins: [{
+      ids: ['P1-7', 'GPIO4'],
+      gpioNo: 4,
+      modes: [0, 1]
+    }, {
+      ids: ['P1-11', 'GPIO17'],
+      gpioNo: 17,
+      modes: [0, 1]
+    }],
     defaultI2cBus: 1
   });
 

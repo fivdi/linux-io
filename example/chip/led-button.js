@@ -8,8 +8,8 @@ var board = new five.Board({
 });
 
 board.on('ready', function() {
-  var led = new five.Led(1013);
-  var button = new five.Button(1014);
+  var led = new five.Led('XIO-P0');
+  var button = new five.Button('XIO-P1');
 
   button.on('down', function() {
     led.on();

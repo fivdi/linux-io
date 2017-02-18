@@ -8,7 +8,7 @@ var board = new five.Board({
 });
 
 board.on('ready', function() {
-  var button = new five.Button(4);
+  var button = new five.Button('P1-7');
 
   button.on('down', function() {
     console.log('down');

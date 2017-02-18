@@ -12,12 +12,12 @@ board.on('ready', function() {
     time,
     i;
 
-  this.pinMode(17, five.Pin.OUTPUT);
+  this.pinMode('P1-11', five.Pin.OUTPUT);
 
   time = process.hrtime();
 
   for (i = 1; i <= 1000000; i += 1) {
-    this.digitalWrite(17, i & 1);
+    this.digitalWrite('P1-11', i & 1);
   }
 
   time = process.hrtime(time);

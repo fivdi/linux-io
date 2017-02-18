@@ -8,7 +8,7 @@ var board = new five.Board({
 });
 
 board.on('ready', function() {
-  var button = new five.Button(1014);
+  var button = new five.Button('XIO-P1');
 
   button.on('down', function() {
     console.log('down');

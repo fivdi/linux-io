@@ -8,8 +8,8 @@ var board = new five.Board({
 });
 
 board.on('ready', function() {
-  var led = new five.Led(17);
-  var button = new five.Button(4);
+  var led = new five.Led('GPIO17');
+  var button = new five.Button('GPIO4');
 
   button.on('down', function() {
     led.on();

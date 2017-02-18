@@ -5,7 +5,19 @@ var LinuxIO = require('../..'),
 
 function TinyChipIO() {
   LinuxIO.call(this, {
-    pins: [132, 1013, 1014],
+    pins: [{
+      ids: ['XIO-P0', 'GPIO1013'],
+      gpioNo: 1013,
+      modes: [0, 1]
+    }, {
+      ids: ['XIO-P1', 'GPIO1014'],
+      gpioNo: 1014,
+      modes: [0, 1]
+    }, {
+      ids: ['CSID0', 'GPIO132'],
+      gpioNo: 132,
+      modes: [0, 1]
+    }],
     defaultI2cBus: 1
   });
 

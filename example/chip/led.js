@@ -8,7 +8,7 @@ var board = new five.Board({
 });
 
 board.on('ready', function() {
-  var led = new five.Led(1013);
+  var led = new five.Led('XIO-P0');
 
   led.blink(500);
 });

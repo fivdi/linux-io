@@ -5,7 +5,15 @@ var LinuxIO = require('../..'),
 
 function TinyBeagleBoneIO() {
   LinuxIO.call(this, {
-    pins: [46, 47],
+    pins: [{
+      ids: ['P8_15', 'GPIO47'],
+      gpioNo: 47,
+      modes: [0, 1]
+    }, {
+      ids: ['P8_16', 'GPIO46'],
+      gpioNo: 46,
+      modes: [0, 1]
+    }],
     defaultI2cBus: 2
   });
 

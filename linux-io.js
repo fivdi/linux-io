@@ -14,28 +14,6 @@ function LinuxIO(options) {
 
   options = options || {};
 
-  if (options.pins) {
-    options.pins.forEach(function (pin) {
-      this._pins[pin] = {
-        supportedModes: [this.MODES.INPUT, this.MODES.OUTPUT],
-        mode: this.MODES.UNKNOWN,
-        report: 0,
-        analogChannel: 127
-      };
-    }.bind(this));
-  }
-
-  for (i = 0; i < this._pins.length; i += 1) {
-    if (this._pins[i] === undefined) {
-      this._pins[i] = {
-        supportedModes: [],
-        mode: this.MODES.UNKNOWN,
-        report: 0,
-        analogChannel: 127
-      }
-    }
-  }
-
   this._samplingInterval = typeof(options.samplingInterval) !== 'undefined' ?
     options.samplingInterval : DEFAULT_SAMPLING_INTERVAL;
   this._reports = [];
@@ -43,21 +21,51 @@ function LinuxIO(options) {
   this._addressToBus = {};
   this._defaultI2cBus = options.defaultI2cBus;
   this._i2cBuses = {};
+  this._pinsById = {};
+
+  if (options.pins) {
+    options.pins.forEach(function (pin, index) {
+      var pinData = {
+        index: index,
+        supportedModes: pin.modes.slice(0),
+        mode: this.MODES.UNKNOWN,
+        report: 0,
+        analogChannel: 127
+      }
+
+      this._pins[index] = pinData;
+
+      if (Array.isArray(pin.ids)) {
+        pin.ids.forEach(function (id) {
+          this._pinsById[id] = pinData;
+        }.bind(this));
+      }
+
+      if (typeof pin.gpioNo === 'number') {
+        pinData.gpioNo = pin.gpioNo;
+      }
+
+    }.bind(this));
+  }
 }
 util.inherits(LinuxIO, BoardIO);
 
 LinuxIO.prototype.normalize = function(pin) {
+  if (typeof pin === 'string') {
+    return this._pinsById[pin].index;
+  }
+
   return pin;
 };
 
 LinuxIO.prototype.pinMode = function(pin, mode) {
-  var pinData = this._pins[pin],
+  var pinData = this._pins[this.normalize(pin)],
     direction;
 
   if (mode === this.MODES.INPUT || mode === this.MODES.OUTPUT) {
     direction = mode === this.MODES.INPUT ? 'in' : 'out';
     if (!pinData.gpio) {
-      pinData.gpio = new Gpio(pin, direction);
+      pinData.gpio = new Gpio(pinData.gpioNo, direction);
     } else if (pinData.mode != mode) {
       pinData.gpio.setDirection(direction);
     }
@@ -68,12 +76,13 @@ LinuxIO.prototype.pinMode = function(pin, mode) {
 };
 
 LinuxIO.prototype.digitalRead = function(pin, handler) {
-  var pinData = this._pins[pin],
+  var pinIndex = this.normalize(pin),
+    pinData = this._pins[pinIndex],
     event = 'digital-read-' + pin;
 
   pinData.report = 1;
 
-  this._reports[pin] = {
+  this._reports[pinIndex] = {
     pinData: pinData,
     event: event
   }
@@ -88,7 +97,7 @@ LinuxIO.prototype.digitalRead = function(pin, handler) {
 };
 
 LinuxIO.prototype.digitalWrite = function(pin, value) {
-  var pinData = this._pins[pin];
+  var pinData = this._pins[this.normalize(pin)];
 
   this._digitalWriteSync(pinData, value);
   pinData.value = value;
@@ -97,7 +106,7 @@ LinuxIO.prototype.digitalWrite = function(pin, value) {
 };
 
 LinuxIO.prototype.pwmWrite = function(pin, value) {
-  this._pwmWriteSync(this._pins[pin], value);
+  this._pwmWriteSync(this._pins[this.normalize(pin)], value);
 
   return this;
 };
@@ -105,7 +114,7 @@ LinuxIO.prototype.pwmWrite = function(pin, value) {
 LinuxIO.prototype.analogWrite = LinuxIO.prototype.pwmWrite;
 
 LinuxIO.prototype.servoConfig = function(pin, min, max) {
-  var pinData = this._pins(pin);
+  var pinData = this._pins(this.normalize(pin));
 
   /*if (pinData.mode !== this.MODES.SERVO) { // TODO - Is this ever needed?
     this.pinMode(pin, this.MODES.SERVO);
@@ -118,7 +127,7 @@ LinuxIO.prototype.servoConfig = function(pin, min, max) {
 };
 
 LinuxIO.prototype.servoWrite = function(pin, value) {
-  var pinData = this._pins[pin];
+  var pinData = this._pins[this.normalize(pin)];
 
   /*if (pinData.mode !== this.MODES.SERVO) { // TODO - Is this ever needed?
     this.pinMode(pin, this.MODES.SERVO);
