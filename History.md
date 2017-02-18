@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.2.0 / Feb 18 2017
+===================
 
   * use mnemonic pin ids rather than numeric pin ids
 
