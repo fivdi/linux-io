@@ -62,17 +62,14 @@ LinuxIO.prototype.normalize = function(pin) {
 };
 
 LinuxIO.prototype.pinMode = function(pin, mode) {
-  var pinData = this._pins[this.normalize(pin)],
-    direction;
+  var pinData = this._pins[this.normalize(pin)];
 
   if (mode === this.MODES.INPUT || mode === this.MODES.OUTPUT) {
-    direction = mode === this.MODES.INPUT ? 'in' : 'out';
-    if (!pinData.gpio) {
-      pinData.gpio = new Gpio(pinData.gpioNo, direction);
-    } else if (pinData.mode != mode) {
-      pinData.gpio.setDirection(direction);
-    }
-    pinData.mode = mode;
+    this._enableDigital(pinData, mode);
+  } else if (mode === this.MODES.PWM) {
+    this._enablePwm(pinData);
+  } else if (mode === this.MODES.SERVO) {
+    this._enableServo(pinData);
   }
 
   return this;
@@ -270,6 +267,24 @@ LinuxIO.prototype._tick = function() {
   }.bind(this));
 
   this._reportTimeoutId = setTimeout(this._tick.bind(this), this._samplingInterval);
+};
+
+LinuxIO.prototype._enableDigital = function(pinData, mode) {
+  var direction = mode === this.MODES.INPUT ? 'in' : 'out';
+
+  if (!pinData.gpio) {
+    pinData.gpio = new Gpio(pinData.gpioNo, direction);
+  } else if (pinData.mode != mode) {
+    pinData.gpio.setDirection(direction);
+  }
+
+  pinData.mode = mode;
+};
+
+LinuxIO.prototype._enablePwm = function(pinData) {
+};
+
+LinuxIO.prototype._enableServo = function(pinData) {
 };
 
 LinuxIO.prototype._digitalReadSync = function(pinData) {
