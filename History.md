@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * use normalized pin index as a suffix for digital-read event name
+
 0.2.0 / Feb 18 2017
 ===================
 

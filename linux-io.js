@@ -78,7 +78,7 @@ LinuxIO.prototype.pinMode = function(pin, mode) {
 LinuxIO.prototype.digitalRead = function(pin, handler) {
   var pinIndex = this.normalize(pin),
     pinData = this._pins[pinIndex],
-    event = 'digital-read-' + pin;
+    event = 'digital-read-' + pinIndex;
 
   pinData.report = 1;
 
