@@ -44,7 +44,6 @@ function LinuxIO(options) {
       if (typeof pin.gpioNo === 'number') {
         pinData.gpioNo = pin.gpioNo;
       }
-
     }.bind(this));
   }
 }
