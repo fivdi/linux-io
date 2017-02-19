@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.3.0 / Feb 19 2017
+===================
 
   * pinMode methods renamed
 
