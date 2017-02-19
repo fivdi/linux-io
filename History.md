@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.2.1 / Feb 19 2017
+===================
 
   * use normalized pin index as a suffix for digital-read event name
   * simplify overriding of pinMode
