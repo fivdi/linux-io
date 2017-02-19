@@ -56,6 +56,10 @@ var LinuxIO = require('linux-io'),
   util = require('util');
 
 function TinyRaspberryPiIO() {
+  if (!(this instanceof TinyRaspberryPiIO)) {
+    return new TinyRaspberryPiIO();
+  }
+
   LinuxIO.call(this, {
     pins: [{
       ids: ['P1-7', 'GPIO4'],

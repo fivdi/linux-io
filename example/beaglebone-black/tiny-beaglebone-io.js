@@ -4,6 +4,10 @@ var LinuxIO = require('../..'),
   util = require('util');
 
 function TinyBeagleBoneIO() {
+  if (!(this instanceof TinyBeagleBoneIO)) {
+    return new TinyBeagleBoneIO();
+  }
+
   LinuxIO.call(this, {
     pins: [{
       ids: ['P8_15', 'GPIO47'],

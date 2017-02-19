@@ -10,6 +10,10 @@ var DEFAULT_SAMPLING_INTERVAL = 5;
 function LinuxIO(options) {
   var i;
 
+  if (!(this instanceof LinuxIO)) {
+    return new LinuxIO(options);
+  }
+
   BoardIO.call(this);
 
   options = options || {};

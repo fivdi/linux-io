@@ -4,6 +4,10 @@ var LinuxIO = require('../..'),
   util = require('util');
 
 function TinyChipIO() {
+  if (!(this instanceof TinyChipIO)) {
+    return new TinyChipIO();
+  }
+
   LinuxIO.call(this, {
     pins: [{
       ids: ['XIO-P0', 'GPIO1013'],
