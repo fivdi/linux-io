@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.3.1 / Feb 20 2017
+===================
 
   * throw an error when an operation is not supported
 
