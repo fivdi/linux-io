@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * throw an error when an operation is not supported
+
 0.3.0 / Feb 19 2017
 ===================
 

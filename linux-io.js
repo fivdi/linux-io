@@ -70,7 +70,11 @@ LinuxIO.prototype.pinMode = function(pin, mode) {
     this._pinModePwm(pinData);
   } else if (mode === this.MODES.SERVO) {
     this._pinModeServo(pinData);
+  } else {
+    throw new Error('mode ' + mode + ' is not supported yet');
   }
+
+  pinData.mode = mode;
 
   return this;
 };
@@ -282,9 +286,11 @@ LinuxIO.prototype._pinModeDigital = function(pinData, mode) {
 };
 
 LinuxIO.prototype._pinModePwm = function(pinData) {
+  throw new Error('PWM mode is not supported yet');
 };
 
 LinuxIO.prototype._pinModeServo = function(pinData) {
+  throw new Error('SERVO mode is not supported yet');
 };
 
 LinuxIO.prototype._digitalReadSync = function(pinData) {
@@ -296,9 +302,11 @@ LinuxIO.prototype._digitalWriteSync = function(pinData, value) {
 };
 
 LinuxIO.prototype._pwmWriteSync = function(pinData, value) {
+  throw new Error('pwmWrite is not supported yet');
 };
 
 LinuxIO.prototype._servoWriteSync = function(pinData, value) {
+  throw new Error('servoWrite is not supported yet');
 };
 
 module.exports = LinuxIO;
