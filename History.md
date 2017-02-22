@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * simplify overriding of pinMode for digital io
+
 0.3.1 / Feb 20 2017
 ===================
 

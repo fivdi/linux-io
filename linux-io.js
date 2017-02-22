@@ -64,8 +64,10 @@ LinuxIO.prototype.normalize = function(pin) {
 LinuxIO.prototype.pinMode = function(pin, mode) {
   var pinData = this._pins[this.normalize(pin)];
 
-  if (mode === this.MODES.INPUT || mode === this.MODES.OUTPUT) {
-    this._pinModeDigital(pinData, mode);
+  if (mode === this.MODES.INPUT) {
+    this._pinModeInput(pinData);
+  } else if (mode === this.MODES.OUTPUT) {
+    this._pinModeOutput(pinData);
   } else if (mode === this.MODES.PWM) {
     this._pinModePwm(pinData);
   } else if (mode === this.MODES.SERVO) {
@@ -273,16 +275,20 @@ LinuxIO.prototype._tick = function() {
   this._reportTimeoutId = setTimeout(this._tick.bind(this), this._samplingInterval);
 };
 
-LinuxIO.prototype._pinModeDigital = function(pinData, mode) {
-  var direction = mode === this.MODES.INPUT ? 'in' : 'out';
-
+LinuxIO.prototype._pinModeInput = function(pinData) {
   if (!pinData.gpio) {
-    pinData.gpio = new Gpio(pinData.gpioNo, direction);
+    pinData.gpio = new Gpio(pinData.gpioNo, 'in');
   } else if (pinData.mode != mode) {
-    pinData.gpio.setDirection(direction);
+    pinData.gpio.setDirection('in');
   }
+};
 
-  pinData.mode = mode;
+LinuxIO.prototype._pinModeOutput = function(pinData) {
+  if (!pinData.gpio) {
+    pinData.gpio = new Gpio(pinData.gpioNo, 'out');
+  } else if (pinData.mode != mode) {
+    pinData.gpio.setDirection('out');
+  }
 };
 
 LinuxIO.prototype._pinModePwm = function(pinData) {
