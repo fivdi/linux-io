@@ -21,8 +21,13 @@ function TinyChipIO() {
       ids: ['CSID0', 'GPIO132'],
       gpioNo: 132,
       modes: [0, 1]
+    }, {
+      ids: ['STATUS'],
+      ledPath: '/sys/class/leds/chip:white:status',
+      modes: [1]
     }],
-    defaultI2cBus: 1
+    defaultI2cBus: 1,
+    defaultLed: 'STATUS'
   });
 
   setImmediate(function () {

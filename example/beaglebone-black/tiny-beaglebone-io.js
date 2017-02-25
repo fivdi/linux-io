@@ -17,8 +17,17 @@ function TinyBeagleBoneIO() {
       ids: ['P8_16', 'GPIO46'],
       gpioNo: 46,
       modes: [0, 1]
+    }, {
+      ids: ['USR2'],
+      ledPath: '/sys/class/leds/beaglebone:green:usr2',
+      modes: [1]
+    }, {
+      ids: ['USR3'],
+      ledPath: '/sys/class/leds/beaglebone:green:usr3',
+      modes: [1]
     }],
-    defaultI2cBus: 2
+    defaultI2cBus: 2,
+    defaultLed: 'USR3'
   });
 
   setImmediate(function () {

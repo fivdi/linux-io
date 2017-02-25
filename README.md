@@ -4,12 +4,14 @@ linux-io is an extensible Linux
 [IO Plugin](https://github.com/rwaldron/io-plugins) for
 [Johnny-Five](https://github.com/rwaldron/johnny-five). It extends
 [board-io](https://github.com/achingbrain/board-io) to provide Linux
-implementations of the digital IO and I2C methods that IO Plugins are
-required to implement.
+implementations for the following features that IO Plugins can support:
 
-The digital IO methods use the
-[GPIO sysfs interface](https://www.kernel.org/doc/Documentation/gpio/sysfs.txt)
-to access GPIOs.
+ * Digital IO
+   * Implementation based on the [GPIO sysfs interface](https://www.kernel.org/doc/Documentation/gpio/sysfs.txt)
+ * I2C
+   * Implementation based on the [/dev interface](https://www.kernel.org/doc/Documentation/i2c/dev-interface)
+ * Built-in LEDs
+   * Implementation based on the [LED sysfs interface](https://www.kernel.org/doc/Documentation/leds/leds-class.txt)
 
 The initial motivation for implementing linux-io was to provide Linux
 implementations of the I2C methods that Johnny-Five IO Plugins are required to
@@ -49,7 +51,7 @@ Ping | no
 Here's a minimalistic IO Plugin for the Raspberry Pi called
 [TinyRaspberryPiIO](https://github.com/fivdi/linux-io/blob/master/example/raspberry-pi/tiny-raspberry-pi-io.js)
 that allows digital IO on GPIO4 and GPIO17 and I2C serial bus access on I2C
-bus 1.
+bus 1. The built-in LED can also be used.
 
 ```js
 var LinuxIO = require('linux-io'),
@@ -69,8 +71,13 @@ function TinyRaspberryPiIO() {
       ids: ['P1-11', 'GPIO17'],
       gpioNo: 17,
       modes: [0, 1]
+    }, {
+      ids: ['LED0'],
+      ledPath: '/sys/class/leds/led0',
+      modes: [1]
     }],
-    defaultI2cBus: 1
+    defaultI2cBus: 1,
+    defaultLed: 'LED0'
   });
 
   setImmediate(function () {

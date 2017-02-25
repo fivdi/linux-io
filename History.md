@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * built-in led support
+
 0.3.2 / Feb 22 2017
 ===================
 

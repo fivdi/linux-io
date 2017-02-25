@@ -17,8 +17,13 @@ function TinyRaspberryPiIO() {
       ids: ['P1-11', 'GPIO17'],
       gpioNo: 17,
       modes: [0, 1]
+    }, {
+      ids: ['LED0'],
+      ledPath: '/sys/class/leds/led0',
+      modes: [1]
     }],
-    defaultI2cBus: 1
+    defaultI2cBus: 1,
+    defaultLed: 'LED0'
   });
 
   setImmediate(function () {
