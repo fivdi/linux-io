@@ -7,11 +7,11 @@ linux-io is an extensible Linux
 implementations for the following features that IO Plugins can support:
 
  * Digital IO
-   * Implementation based on the [GPIO sysfs interface](https://www.kernel.org/doc/Documentation/gpio/sysfs.txt)
+   * Implementation based on the [GPIO sysfs interface](https://www.kernel.org/doc/Documentation/gpio/sysfs.txt) using [onoff](https://github.com/fivdi/onoff)
  * I2C
-   * Implementation based on the [/dev interface](https://www.kernel.org/doc/Documentation/i2c/dev-interface)
+   * Implementation based on the [/dev interface](https://www.kernel.org/doc/Documentation/i2c/dev-interface) using [i2c-bus](https://github.com/fivdi/i2c-bus)
  * Built-in LEDs
-   * Implementation based on the [LED sysfs interface](https://www.kernel.org/doc/Documentation/leds/leds-class.txt)
+   * Implementation based on the [LED sysfs interface](https://www.kernel.org/doc/Documentation/leds/leds-class.txt) using [led.js](https://github.com/fivdi/linux-io/blob/master/lib/led.js)
 
 The initial motivation for implementing linux-io was to provide Linux
 implementations of the I2C methods that Johnny-Five IO Plugins are required to
