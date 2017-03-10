@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.5.0 / Mar 10 2017
+===================
 
   * support for ANALOG mode
 
