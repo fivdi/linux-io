@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * fix arguments passed to i2cRead if called with Firmata.js API
+
 0.5.0 / Mar 10 2017
 ===================
 
