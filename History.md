@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.5.2 / Mar 31 2017
+===================
 
   * allow extensions to store custom pinData
 
