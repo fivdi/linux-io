@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.5.3 / Apr 02 2017
+===================
 
   * error handling improved
 
