@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * error handling improved
+
 0.5.2 / Mar 31 2017
 ===================
 
