@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.5.4 / Apr 03 2017
+===================
 
  * verify that pin is configured correctly before usage
 
