@@ -1,7 +1,12 @@
+Unpublished
+===========
+
+  * prevent pin mode changes
+
 0.5.4 / Apr 03 2017
 ===================
 
- * verify that pin is configured correctly before usage
+  * verify that pin is configured correctly before usage
 
 0.5.3 / Apr 02 2017
 ===================
