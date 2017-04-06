@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * name property support added
+
 0.5.5 / Apr 04 2017
 ===================
 
