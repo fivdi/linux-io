@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * save value passed to pwmWrite and servoWrite in pin configuration object
+
 0.5.6 / Apr 06 2017
 ===================
 
