@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * pingRead support added
+
 0.5.7 / Apr 14 2017
 ===================
 
