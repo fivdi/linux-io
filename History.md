@@ -2,6 +2,7 @@ Unpublished
 ===========
 
   * automatically set pin mode when necessary
+  * use Linux-IO as a default name
 
 0.6.1 / May 01 2017
 ===================
