@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * automatically set pin mode when necessary
+
 0.6.1 / May 01 2017
 ===================
 
