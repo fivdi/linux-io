@@ -13,7 +13,7 @@
   "dependencies": {
     "board-io": "^3.0.5",
     "i2c-bus": "^1.2.2",
-    "onoff": "^1.1.2"
+    "onoff": "^1.1.3"
   },
   "keywords": [
     "linux",
