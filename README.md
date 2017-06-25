@@ -1,6 +1,6 @@
-# linux-io 
+# Linux-IO
 
-linux-io is an extensible Linux
+Linux-IO is an extensible Linux
 [IO Plugin](https://github.com/rwaldron/io-plugins) for
 [Johnny-Five](https://github.com/rwaldron/johnny-five). It extends
 [board-io](https://github.com/achingbrain/board-io) to provide Linux
@@ -13,11 +13,11 @@ implementations for the following features that IO Plugins can support:
  * Built-in LEDs
    * Implementation based on the [LED sysfs interface](https://www.kernel.org/doc/Documentation/leds/leds-class.txt) using [led.js](https://github.com/fivdi/linux-io/blob/master/lib/led.js)
 
-The initial motivation for implementing linux-io was to provide Linux
+The initial motivation for implementing Linux-IO was to provide Linux
 implementations of the I2C methods that Johnny-Five IO Plugins are required to
 implement. Over the course of the last two years I was involved in adding I2C
 functionality to a number of IO Plugins. In reality, more or less the same
-code was added to each IO Plugin. The goal of linux-io is to make such code
+code was added to each IO Plugin. The goal of Linux-IO is to make such code
 reusable across Linux IO Plugins.
 
 ## Installation
@@ -30,7 +30,7 @@ npm install linux-io
 
 The Johnny-Five features supported by a platform are summarized in tables on
 the [Platform Support](http://johnny-five.io/platform-support/) page. The
-features supported by linux-io shown in the following table:
+features supported by Linux-IO shown in the following table:
 
 Feature | Support
 :--- | :---
@@ -155,4 +155,11 @@ board.on('ready', function() {
 Additional examples for the Raspberry Pi, BeagleBone Black and C.H.I.P can be
 found in the
 [example directory](https://github.com/fivdi/linux-io/tree/master/example).
+
+## IO Plugins Based On Linux-IO
+
+- BeagleBone Black
+  - [BeagleBone-IO](https://github.com/julianduque/beaglebone-io)
+- Raspberry Pi
+  - [Pi-IO](https://github.com/fivdi/pi-io)
 

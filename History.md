@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * improve documentation
+
 0.6.3 / Jun 18 2017
 ===================
 
