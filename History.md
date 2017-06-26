@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.7.0 / Jun 26 2017
+===================
 
   * improve documentation
   * add support for enabling pull-up and pull-down resistors
