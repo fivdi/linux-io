@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * prevent concurrent pingReads on proximity sensors
+
 0.7.0 / Jun 26 2017
 ===================
 
