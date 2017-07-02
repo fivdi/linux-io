@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.7.1 / Jul 01 2017
+===================
 
   * prevent concurrent pingReads on proximity sensors
 

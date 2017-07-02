@@ -1,6 +1,6 @@
 {
   "name": "linux-io",
-  "version": "0.7.0",
+  "version": "0.7.1",
   "description": "Extensible Linux IO Plugin for Johnny-Five",
   "main": "lib/linux-io.js",
   "directories": {
