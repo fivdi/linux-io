@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.8.0 / Jul 16 2017
+===================
 
   * remove error handling for _pingRead callback
   * update dependencies
