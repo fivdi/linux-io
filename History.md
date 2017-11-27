@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.8.1 / Nov 27 2017
+===================
 
   * access array with correct syntax
 
