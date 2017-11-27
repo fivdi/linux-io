@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * access array with correct syntax
+
 0.8.0 / Jul 16 2017
 ===================
 
