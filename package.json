@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "board-io": "^3.0.5",
-    "i2c-bus": "^1.2.2",
-    "mutexify": "^1.1.0",
-    "onoff": "^1.1.4"
+    "i2c-bus": "^1.2.5",
+    "mutexify": "^1.2.0",
+    "onoff": "^1.1.9"
   },
   "keywords": [
     "linux",
