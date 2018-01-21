@@ -1,3 +1,8 @@
+Unpublished
+===========
+
+  * constrain microsecond value for servo pulses
+
 0.9.0 / Jan 21 2018
 ===================
 
