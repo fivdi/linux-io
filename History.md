@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.9.2 / Jan 21 2018
+===================
 
   * update microsecond value with constrained microsecond value
 
