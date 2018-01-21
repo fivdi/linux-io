@@ -1,5 +1,5 @@
-Unpublished
-===========
+0.9.0 / Jan 21 2018
+===================
 
   * allow servowrite to receive degrees or microseconds
 
