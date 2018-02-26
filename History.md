@@ -1,5 +1,5 @@
-Unpublished
-===========
+1.0.0 / Feb 26 2018
+===================
 
   * update dependencies (onoff v2.0.0, i2c-bus v3.0.0)
   * drop support for node.js v0.10, v0.12, v5 and v7
