@@ -1,5 +1,5 @@
-Unpublished
-===========
+1.0.1 / Apr 07 2018
+===================
 
   * update dependencies (onoff v3.0.2, i2c-bus v3.1.0)
 
