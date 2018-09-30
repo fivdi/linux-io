@@ -2,6 +2,7 @@ Unpublished
 ===========
 
   * update dependencies to support V8 7.0 (onoff v3.2.2, i2c-bus v4.0.2)
+  * replace new Buffer with Buffer.from or Buffer.alloc
 
 1.0.1 / Apr 07 2018
 ===================
