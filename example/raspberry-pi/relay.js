@@ -1,14 +1,14 @@
 'use strict';
 
-var five = require('johnny-five');
-var TinyRaspberryPiIO = require('./tiny-raspberry-pi-io');
+const five = require('johnny-five');
+const TinyRaspberryPiIO = require('./tiny-raspberry-pi-io');
 
-var board = new five.Board({
+const board = new five.Board({
   io: new TinyRaspberryPiIO()
 });
 
 board.on('ready', function() {
-  var relay = new five.Relay('P1-11');
+  const relay = new five.Relay('P1-11');
 
   relay.on();
 
