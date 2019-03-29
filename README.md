@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/fivdi/linux-io.svg?branch=master)](https://travis-ci.org/fivdi/linux-io)
+
 # Linux-IO
 
 Linux-IO is an extensible Linux

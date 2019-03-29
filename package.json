@@ -6,6 +6,9 @@
   "directories": {
     "example": "example"
   },
+  "scripts": {
+    "lint": "jshint lib/*.js example/*/*.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/fivdi/linux-io.git"
@@ -15,9 +18,12 @@
   },
   "dependencies": {
     "board-io": "^3.0.5",
-    "i2c-bus": "^4.0.2",
+    "i2c-bus": "^4.0.9",
     "mutexify": "^1.2.0",
-    "onoff": "^3.2.2"
+    "onoff": "^4.1.1"
+  },
+  "devDependencies": {
+    "jshint": "^2.10.2"
   },
   "keywords": [
     "linux",
@@ -26,4 +32,3 @@
   "author": "fivdi",
   "license": "MIT"
 }
-

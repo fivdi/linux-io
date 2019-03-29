@@ -1,7 +1,7 @@
 'use strict';
 
-var LinuxIO = require('../..'),
-  util = require('util');
+const LinuxIO = require('../..');
+const util = require('util');
 
 function TinyChipIO() {
   if (!(this instanceof TinyChipIO)) {
