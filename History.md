@@ -1,5 +1,5 @@
-Unpublished
-===========
+1.0.3 / Apr 29 2019
+===================
 
   * update dependencies (i2c-bus v4.0.9, onoff v4.1.1)
   * lint with jshint
