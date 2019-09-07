@@ -1,5 +1,5 @@
-Unpublished
-===========
+1.0.4 / Sep 07 2019
+===================
 
   * remove node 11 from build
   * update dependencies (i2c-bus v4.0.11, onoff v4.1.4)
