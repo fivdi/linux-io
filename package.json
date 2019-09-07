@@ -18,9 +18,9 @@
   },
   "dependencies": {
     "board-io": "^3.0.5",
-    "i2c-bus": "^4.0.9",
+    "i2c-bus": "^4.0.11",
     "mutexify": "^1.2.0",
-    "onoff": "^4.1.1"
+    "onoff": "^4.1.4"
   },
   "devDependencies": {
     "jshint": "^2.10.2"
