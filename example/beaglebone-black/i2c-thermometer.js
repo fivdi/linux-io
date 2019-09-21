@@ -8,7 +8,7 @@ const board = new five.Board({
 });
 
 board.on('ready', function() {
-  var thermometer = new five.Thermometer({
+  const thermometer = new five.Thermometer({
     controller: "MCP9808"
   });
 
