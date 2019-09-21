@@ -12,12 +12,12 @@ board.on('ready', function() {
   let time;
   let i;
 
-  this.pinMode('GPIO46', five.Pin.OUTPUT);
+  this.pinMode('GPIO66', five.Pin.OUTPUT);
 
   time = process.hrtime();
 
   for (i = 1; i <= 250000; i += 1) {
-    this.digitalWrite('GPIO46', i & 1);
+    this.digitalWrite('GPIO66', i & 1);
   }
 
   time = process.hrtime(time);

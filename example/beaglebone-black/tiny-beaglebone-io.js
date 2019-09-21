@@ -10,12 +10,12 @@ function TinyBeagleBoneIO() {
 
   LinuxIO.call(this, {
     pins: [{
-      ids: ['P8_15', 'GPIO47'],
-      gpioNo: 47,
+      ids: ['P8_7', 'GPIO66'],
+      gpioNo: 66,
       modes: [0, 1]
     }, {
-      ids: ['P8_16', 'GPIO46'],
-      gpioNo: 46,
+      ids: ['P8_8', 'GPIO67'],
+      gpioNo: 67,
       modes: [0, 1]
     }, {
       ids: ['USR2'],

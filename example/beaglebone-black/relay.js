@@ -8,7 +8,7 @@ const board = new five.Board({
 });
 
 board.on('ready', function() {
-  const relay = new five.Relay('GPIO46');
+  const relay = new five.Relay('GPIO66');
 
   relay.on();
 

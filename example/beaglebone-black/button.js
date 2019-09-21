@@ -8,7 +8,7 @@ const board = new five.Board({
 });
 
 board.on('ready', function() {
-  const button = new five.Button('GPIO47');
+  const button = new five.Button('GPIO67');
 
   button.on('down', function() {
     console.log('down');
