@@ -1,7 +1,7 @@
 'use strict';
 
 const five = require('johnny-five');
-const TinyRaspberryPiIO = require('./tiny-beaglebone-io');
+const TinyRaspberryPiIO = require('./tiny-raspberry-pi-io');
 
 const board = new five.Board({
   io: new TinyRaspberryPiIO()
