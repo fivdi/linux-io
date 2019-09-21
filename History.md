@@ -1,5 +1,5 @@
-Unpublished
-===========
+1.0.7 / Sep 22 2019
+===================
   * update dependencies (onoff v5.0.0)
 
 1.0.6 / Sep 21 2019
