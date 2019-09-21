@@ -1,3 +1,7 @@
+Unpublished
+===========
+  * update dependencies (onoff v5.0.0)
+
 1.0.6 / Sep 21 2019
 ===================
   * switch from gpio 46 and 47 to 66 and 67 on beaglebone black
