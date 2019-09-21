@@ -14,7 +14,7 @@
     "url": "https://github.com/fivdi/linux-io.git"
   },
   "engines": {
-    "node": ">=4.0.0"
+    "node": ">=6.0.0"
   },
   "dependencies": {
     "board-io": "^3.0.5",

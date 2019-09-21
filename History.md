@@ -1,3 +1,7 @@
+Unpublished
+===========
+  * drop support for node.js v4
+
 1.0.4 / Sep 07 2019
 ===================
 
