@@ -18,7 +18,7 @@
   },
   "dependencies": {
     "board-io": "^3.0.5",
-    "i2c-bus": "^4.0.11",
+    "i2c-bus": "^5.0.0",
     "mutexify": "^1.2.0",
     "onoff": "^4.1.4"
   },
