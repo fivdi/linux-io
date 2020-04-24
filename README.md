@@ -22,7 +22,7 @@ functionality to a number of IO Plugins. In reality, more or less the same
 code was added to each IO Plugin. The goal of Linux-IO is to make such code
 reusable across Linux IO Plugins.
 
-Linux-IO supports Node.js versions 6, 8, 10, 12 and 13.
+Linux-IO supports Node.js versions 8, 10, 12, 13 and 14.
 
 ## Installation
 
