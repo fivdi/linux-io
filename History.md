@@ -1,6 +1,7 @@
 Unpublished
 ===========
   * update dependencies
+  * drop support for node.js 6, add support for node.js 14
 
 1.0.7 / Sep 22 2019
 ===================
