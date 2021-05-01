@@ -1,3 +1,7 @@
+Unpublished
+===========
+  * update dependencies
+
 1.1.0 / Apr 25 2020
 ===================
   * update dependencies
