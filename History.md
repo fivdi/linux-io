@@ -1,5 +1,6 @@
 Unpublished
 ===========
+  * drop support for node.js 8 and 13, add support for node.js 15 and 16
   * update dependencies
 
 1.1.0 / Apr 25 2020
