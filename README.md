@@ -1,4 +1,5 @@
 [![Build Status](https://travis-ci.org/fivdi/linux-io.svg?branch=master)](https://travis-ci.org/fivdi/linux-io)
+[![Build Status](https://app.travis-ci.com/fivdi/linux-io.svg?branch=master)](https://app.travis-ci.com/github/fivdi/linux-io)
 
 # Linux-IO
 
